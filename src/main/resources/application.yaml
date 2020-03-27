@@ -1,0 +1,20 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog.yaml
+  application:
+    name: amos-converter
+  datasource:
+    platform: h2
+    url: "jdbc:h2:mem:panda;MODE=MSSQLServer;DB_CLOSE_DELAY=-1"
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+  jpa:
+    properties:
+      hibernate:
+        legacy_limit_handler: true
+        dialect: org.hibernate.dialect.SQLServerDialect
+    generate-ddl: false
+    show-sql: false

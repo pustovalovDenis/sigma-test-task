@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+		xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd" logicalFilePath="0006_create_group_student_relation_table.xml">
+
+	<changeSet author="Pustovalov.Denis" id="0006_create_group_student_relation_table_#1">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="student_group_relation"/>
+			</not>
+		</preConditions>
+		<createTable tableName="student_group_relation">
+			<column name="id" type="BIGINT" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="group_id" type="BIGINT">
+				<constraints primaryKey="true" nullable="false"
+							 primaryKeyTablespace="group"
+							 primaryKeyName="group_student_relation_pk"
+				/>
+			</column>
+			<column name="student_id" type="BIGINT">
+				<constraints primaryKey="true" nullable="false"
+							 primaryKeyTablespace="student"
+							 primaryKeyName="student_group_relation_pk"
+				/>
+			</column>
+		</createTable>
+		<createIndex tableName="student_group_relation" indexName="group_student_relation_idx" unique="true">
+			<column name="group_id"/>
+			<column name="student_id"/>
+		</createIndex>
+	</changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,26 @@
+[
+  {
+    "caption": "KNPZ-18-1",
+    "minCapacity": 2,
+    "maxCapacity": 4,
+    "level": 1
+  },
+  {
+    "caption": "KNPZ-19-1",
+    "minCapacity": 2,
+    "maxCapacity": 4,
+    "level": 1
+  },
+  {
+    "caption": "KNPZ-20-1",
+    "minCapacity": 1,
+    "maxCapacity": 6,
+    "level": 1
+  },
+  {
+    "caption": "KNPZ-20-31",
+    "minCapacity": 1,
+    "maxCapacity": 6,
+    "level": 2
+  }
+]

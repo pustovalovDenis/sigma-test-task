@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+		xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd" logicalFilePath="0007_create_school_classs_table.xml">
+
+	<changeSet author="Pustovalov.Denis" id="0007_create_school_classs_table_#1">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="school_class"/>
+			</not>
+		</preConditions>
+		<createTable tableName="school_class">
+			<column name="id" type="BIGINT" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="caption" type="VARCHAR(255)"/>
+			<column name="levels" type="VARCHAR(MAX)"/>
+		</createTable>
+		<createIndex tableName="school_class" indexName="school_class_caption_idx" unique="true">
+			<column name="caption"/>
+		</createIndex>
+	</changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,30 @@
+[
+  {
+    "caption": "math",
+    "defaultSubject": true
+  },
+  {
+    "caption": "geography",
+    "defaultSubject": true
+  },
+  {
+    "caption": "history",
+    "defaultSubject": true
+  },
+  {
+    "caption": "philosophy",
+    "defaultSubject": false
+  },
+  {
+    "caption": "foreign languages",
+    "defaultSubject": false
+  },
+  {
+    "caption": "culture",
+    "defaultSubject": false
+  },
+  {
+    "caption": "physical training",
+    "defaultSubject": false
+  }
+]

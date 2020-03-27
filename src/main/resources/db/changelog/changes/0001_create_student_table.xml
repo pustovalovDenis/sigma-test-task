@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+		xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd" logicalFilePath="0001_create_student_table.xml">
+
+	<changeSet author="Pustovalov.Denis" id="0001_create_student_table_#1">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="student"/>
+			</not>
+		</preConditions>
+		<createTable tableName="student">
+			<column name="id" type="BIGINT" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="name" type="VARCHAR(255)"/>
+			<column name="surname" type="VARCHAR(255)"/>
+			<column name="unplaced" type="BIT"/>
+			<column name="level" type="number(10)">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+		<createIndex tableName="student" indexName="name_surname_idx" unique="true">
+			<column name="surname"/>
+			<column name="name"/>
+		</createIndex>
+	</changeSet>
+
+</databaseChangeLog>

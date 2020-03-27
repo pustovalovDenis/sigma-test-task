@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+		xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd" logicalFilePath="0004_create_group_table.xml">
+
+	<changeSet author="Pustovalov.Denis" id="0004_create_group_table_#1">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="groups"/>
+			</not>
+		</preConditions>
+		<createTable tableName="groups">
+			<column name="id" type="BIGINT" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="caption" type="VARCHAR(255)"/>
+			<column name="min_capacity" type="number(10)"/>
+			<column name="max_capacity" type="number(10)"/>
+			<column name="level" type="number(10)">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+		<createIndex tableName="groups" indexName="groups_caption_level_idx" unique="true">
+			<column name="caption"/>
+			<column name="level"/>
+		</createIndex>
+	</changeSet>
+
+</databaseChangeLog>
