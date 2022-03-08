@@ -18,7 +18,7 @@
 		<java.version>1.8</java.version>
 		<h2.version>1.4.197</h2.version>
 		<lombok.version>1.18.4</lombok.version>
-		<liquibase.maven.plugin.version>3.6.3</liquibase.maven.plugin.version>
+		<liquibase.maven.plugin.version>4.8.0</liquibase.maven.plugin.version>
 		<org.mapstruct.version>1.3.0.Final</org.mapstruct.version>
 		<org.apache.maven.plugins.version>3.6.2</org.apache.maven.plugins.version>
 		<org.apache.commons.lang.version>3.8.1</org.apache.commons.lang.version>
